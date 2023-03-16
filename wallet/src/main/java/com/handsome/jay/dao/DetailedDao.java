@@ -2,6 +2,7 @@ package com.handsome.jay.dao;
 
 import com.handsome.jay.entity.Detailed;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author jay
  * @since 2023-03-16
  */
+@Mapper
 public interface DetailedDao extends BaseMapper<Detailed> {
 
 }

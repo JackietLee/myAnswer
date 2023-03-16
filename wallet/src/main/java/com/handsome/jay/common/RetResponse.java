@@ -1,9 +1,5 @@
 package com.handsome.jay.common;
 
-import com.fs.zhnm.edge.cloud.parent.common.base.vo.BaseVO;
-import com.fs.zhnm.edge.cloud.parent.common.constants.ReturnCode;
-import com.fs.zhnm.edge.cloud.parent.common.exceptions.ExceptionCodeInterface;
-
 /**
  * 
  * @ClassName: RetResponse
@@ -13,7 +9,7 @@ import com.fs.zhnm.edge.cloud.parent.common.exceptions.ExceptionCodeInterface;
  * 
  * @param <T>
  */
-public class RetResponse<T> extends BaseVO {
+public class RetResponse<T> {
 
     private static final long serialVersionUID = 4205752013482071697L;
 
@@ -99,16 +95,6 @@ public class RetResponse<T> extends BaseVO {
      */
     public static <T> RetResult<T> fail(String code, String msg) {
         return new RetResult<T>().setCode(ReturnCode.FAIL.getCode()).setMsgCode(code).setMessage(msg);
-    }
-
-    /**
-     *
-     * @param exceptionCodeInterface
-     * @return
-     * @param <T>
-     */
-    public static <T> RetResult<T> fail(ExceptionCodeInterface exceptionCodeInterface) {
-        return new RetResult<T>().setCode(ReturnCode.FAIL.getCode()).setMsgCode(exceptionCodeInterface.getCode()).setMessage(exceptionCodeInterface.getMessage());
     }
 
 }

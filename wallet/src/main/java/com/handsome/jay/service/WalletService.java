@@ -15,9 +15,9 @@ import com.handsome.jay.vo.DrawbackVo;
  */
 public interface WalletService extends IService<Wallet> {
 
+    Wallet getWalletByUserId(Integer userId);
+
     boolean consume(ConsumeVo vo);
 
     boolean drawback(DrawbackVo vo);
-
-    Wallet getWalletByUserId(Integer userId);
 }

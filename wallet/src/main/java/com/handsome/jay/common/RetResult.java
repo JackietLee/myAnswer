@@ -1,7 +1,6 @@
 package com.handsome.jay.common;
 
-import com.fs.zhnm.edge.cloud.parent.common.constants.ReturnCode;
-import com.fs.zhnm.edge.cloud.parent.common.utils.GsonUtils;
+import com.google.gson.Gson;
 
 /**
  * 
@@ -70,6 +69,6 @@ public class RetResult<T> {
 
     @Override
     public String toString() {
-        return GsonUtils.toString(this);
+        return new Gson().toJson(this);
     }
 }

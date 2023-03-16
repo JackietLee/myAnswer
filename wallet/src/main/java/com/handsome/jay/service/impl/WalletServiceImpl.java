@@ -29,9 +29,9 @@ public class WalletServiceImpl extends ServiceImpl<WalletDao, Wallet> implements
     @Autowired
     private DetailedDao detailedDao;
 
-    public Wallet getWalletByUserId(ConsumeVo vo) {
+    public Wallet getWalletByUserId(Integer userId) {
         LambdaQueryWrapper<Wallet> wrapper = new LambdaQueryWrapper<Wallet>();
-        wrapper.eq(Wallet::getUserId, vo.getUserId());
+        wrapper.eq(Wallet::getUserId, userId);
         Wallet wallet = baseMapper.selectOne(wrapper);
         return wallet;
     }
