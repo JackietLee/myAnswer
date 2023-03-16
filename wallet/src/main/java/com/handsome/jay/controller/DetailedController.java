@@ -1,6 +1,7 @@
 package com.handsome.jay.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.handsome.jay.common.RetResponse;
 import com.handsome.jay.common.RetResult;
@@ -38,8 +39,9 @@ public class DetailedController {
      * @return
      */
     @GetMapping("/page")
-    public RetResult<IPage<Detailed>> page(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
-        QueryWrapper<Detailed> queryWrapper= new QueryWrapper<>();
+    public RetResult<IPage<Detailed>> page(@RequestParam Integer walletId, @RequestParam Integer pageNum,@RequestParam Integer pageSize){
+        LambdaQueryWrapper<Detailed> queryWrapper= new LambdaQueryWrapper<>();
+        queryWrapper.eq(Detailed::getWalletId, walletId);
         return RetResponse.success(detailedService.page(new Page<>(pageNum, pageSize),queryWrapper));
     }
 
