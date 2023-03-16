@@ -16,5 +16,5 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface WalletDao extends BaseMapper<Wallet> {
 
-    Wallet getWalletByUserId(@Param("userId") int userId);
+
 }
